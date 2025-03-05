@@ -1,23 +1,20 @@
-#include <stdio.h>
-
 void	ft_swap(int *a, int *b)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+    int     tmp;
+
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
+
+
+#include <stdio.h>
+
 int main()
 {
-	int		a;
-	int		b;
+    int     a = 10;
+    int     b = 42;
 
-	a = 29;
-	b = 5;
-	printf("Antes\n");
-	printf("a -> %d\n", a);
-	printf("b -> %d\n", b);
-	ft_swap(&a, &b);
-	printf("Depois\n");
-	printf("a -> %d\n", a);
-	printf("b -> %d\n", b);
+    ft_swap(&a, &b);
+    printf("%i \n%i \n", a, b);
 }

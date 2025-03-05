@@ -2,17 +2,23 @@
 
 void	ft_putstr(char *str)
 {
-	int		i;
-	
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+    int     i;
+
+    i = 0;
+    while(str[i])
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
 }
 
-int		main()
+
+
+
+int main()
 {
-	ft_putstr("Cruzeiro");
+    char    *str;
+
+    str = "Cruzeiro\n";
+    ft_putstr(str);
 }

@@ -1,30 +1,31 @@
-#include <stdio.h>
-
 int	ft_atoi(const char *str)
 {
-	int		sign;
-	int		result;
+    int     i = 0;
+    int     result = 0;
+    int     sign = 1;
 
-	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	
-	while (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + *str - '0';
-		str++;
-	}
-	return (sign * result);
+    while(str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+        i++;
+    if (str[i] == '-')
+        sign = -1;
+    if (str[i] == '+' || str[i] == '-')
+        i++;
+    while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+    {
+        result = result * 10 + str[i] - '0';
+        i++;
+    }
+    return (result * sign);
 }
-int main(int argc, char **argv)
+
+
+#include <stdio.h>
+
+int main()
 {
-	if (argc == 2)
-	{
-		printf("%d\n", ft_atoi(argv[1]));
-	}
+    char    *str;
+
+    str = "-2147483648";
+    printf("%i\n", ft_atoi(str));
+
 }

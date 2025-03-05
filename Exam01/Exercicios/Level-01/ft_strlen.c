@@ -1,15 +1,19 @@
-#include <stdio.h>
 int	ft_strlen(char *str)
 {
-	int		count;
-	
-	count = 0;
-	while(str[count])
-		count++;
-	return (count);
+    int     i;
+
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
 }
+
+
+
+
+#include <stdio.h>
 
 int main()
 {
-	printf("%d\n", ft_strlen("Cruzeiro"));
+    printf("%i \n", ft_strlen("Cruzeiro"));
 }
